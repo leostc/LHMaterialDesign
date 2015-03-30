@@ -10,15 +10,33 @@
 
 @interface UIViewController (MaterialDesign)
 
+/**
+ *  Present View Controller with Material Design
+ *
+ *  @param viewController presented View Controller
+ *  @param view           view tapped, to calculate the point that animation starts
+ *  @param color          animation color, if nil, will use viewController's background color
+ *  @param animated       animated or not
+ *  @param completion     completion block
+ */
 - (void)presentLHViewController:(UIViewController *)viewController
-                           view:(UIView *)view
+                        tapView:(UIView *)view
                           color:(UIColor *)color
                        animated:(BOOL)animated
                      completion:(void (^)(void))completion;
 
-- (void)dismissLHViewControllerWithColor:(UIColor*)color
-                                animated:(BOOL)animated
-                              completion:(void (^)(void))completion;
+/**
+ *  Dismiss View Controller with Material Design
+ *
+ *  @param view       view tapped, if nil, will use the presenting view controller's point that animation starts
+ *  @param color      animation color, if nil, will use viewController's background color
+ *  @param animated   animated or not
+ *  @param completion completion block
+ */
+- (void)dismissLHViewControllerWithTapView:(UIView *)view
+                                     color:(UIColor*)color
+                                  animated:(BOOL)animated
+                                completion:(void (^)(void))completion;
 
 
 @end

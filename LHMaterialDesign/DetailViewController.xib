@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-lp-3Rd">
-                    <rect key="frame" x="108" y="283" width="159" height="102"/>
+                    <rect key="frame" x="115" y="173" width="144" height="93"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="Back">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

@@ -14,47 +14,69 @@ static const char *pointVarKey = "animationPoint";
 @implementation UIViewController (MaterialDesign)
 
 - (void)presentLHViewController:(UIViewController *)viewController
-                           view:(UIView *)view
+                        tapView:(UIView *)view
                           color:(UIColor*)color
                        animated:(BOOL)animated
                      completion:(void (^)(void))completion{
-    self.view.userInteractionEnabled = NO;
-    CGPoint convertedPoint = [self.view convertPoint:view.center fromView:view.superview];
-    [viewController setAnimationPoint:[NSValue valueWithCGPoint:convertedPoint]];
-    
-    UIColor *animationColor = color;
-    if (animationColor == nil) {
-        animationColor = viewController.view.backgroundColor;
-    }
-    [self mdAnimateAtPoint:convertedPoint color:animationColor duration:0.5 inflating:YES presetingViewController:nil completion:^{
-        self.view.userInteractionEnabled = YES;
+    if (animated) {
+        self.view.userInteractionEnabled = NO;
+        CGPoint convertedPoint = [self.view convertPoint:view.center fromView:view.superview];
+        [viewController setAnimationPoint:[NSValue valueWithCGPoint:convertedPoint]];
+        
+        UIColor *animationColor = color;
+        if (animationColor == nil) {
+            animationColor = viewController.view.backgroundColor;
+        }
+        [self mdAnimateAtPoint:convertedPoint color:animationColor duration:0.5 inflating:YES presetingViewController:nil completion:^{
+            self.view.userInteractionEnabled = YES;
+            [self presentViewController:viewController animated:NO completion:^{
+                if (completion) {
+                    completion();
+                }
+            }];
+        }];
+    } else {
         [self presentViewController:viewController animated:NO completion:^{
             if (completion) {
                 completion();
             }
         }];
-    }];
+    }
 }
 
-- (void)dismissLHViewControllerWithColor:(UIColor*)color
-                                animated:(BOOL)animated
-                              completion:(void (^)(void))completion{
-    CGPoint animaionPoint = [[self animationPoint] CGPointValue];
-    UIColor *animationColor = color;
-    if (animationColor == nil) {
-        animationColor = self.view.backgroundColor;
-    }
-    
-    UIViewController *vc = self.presentingViewController;
-    vc.view.userInteractionEnabled = NO;
-    [self dismissViewControllerAnimated:NO completion:^{
-        [self mdAnimateAtPoint:animaionPoint color:animationColor duration:0.5 inflating:NO presetingViewController:vc completion:^{
-            vc.view.userInteractionEnabled = YES;
+- (void)dismissLHViewControllerWithTapView:(UIView *)view
+                                     color:(UIColor*)color
+                                  animated:(BOOL)animated
+                                completion:(void (^)(void))completion{
+    if (animated) {
+        CGPoint animaionPoint = CGPointZero;
+        if (view) {
+            animaionPoint = [self.view convertPoint:view.center fromView:view.superview];
+        } else {
+            animaionPoint = [[self animationPoint] CGPointValue];
+        }
+        UIColor *animationColor = color;
+        if (animationColor == nil) {
+            animationColor = self.view.backgroundColor;
+        }
+        
+        UIViewController *vc = self.presentingViewController;
+        vc.view.userInteractionEnabled = NO;
+        [self dismissViewControllerAnimated:NO completion:^{
+            [self mdAnimateAtPoint:animaionPoint color:animationColor duration:0.5 inflating:NO presetingViewController:vc completion:^{
+                vc.view.userInteractionEnabled = YES;
+                if (completion) {
+                    completion();
+                }
+            }];
+        }];
+    } else {
+        [self dismissViewControllerAnimated:NO completion:^{
             if (completion) {
                 completion();
             }
         }];
-    }];
+    }
 }
 
 #pragma mark - animation
@@ -71,7 +93,6 @@ static const char *pointVarKey = "animationPoint";
         [self.view.layer addSublayer:shapeLayer];
     }
     
-    // animate
     CGFloat scale = 1.0 / shapeLayer.frame.size.width;
     NSString *timingFunctionName = kCAMediaTimingFunctionDefault;
     CABasicAnimation *animation = [self shapeAnimationWithTimingFunction:[CAMediaTimingFunction functionWithName:timingFunctionName] scale:scale inflating:inflating];
@@ -91,13 +112,6 @@ static const char *pointVarKey = "animationPoint";
 
 #pragma mark - helpers
 
-/**
- *  求point点距离四个角的最大距离
- *
- *  @param point 动画扩散的中心点
- *
- *  @return 最大距离
- */
 - (CGFloat)mdShapeDiameterForPoint:(CGPoint)point {
     CGPoint cornerPoints[] = { {0.0, 0.0}, {0.0, self.view.bounds.size.height}, {self.view.bounds.size.width, self.view.bounds.size.height}, {self.view.bounds.size.width, 0.0} };
     CGFloat radius = 0.0;

@@ -27,7 +27,7 @@
 }
 
 - (IBAction)clickButtonPressed:(id)sender{
-    [self presentLHViewController:[DetailViewController alloc] view:sender color:nil animated:YES completion:^{
+    [self presentLHViewController:[[DetailViewController alloc] init] tapView:sender color:nil animated:YES completion:^{
         
     }];
 }

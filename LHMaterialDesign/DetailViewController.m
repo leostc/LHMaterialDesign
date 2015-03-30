@@ -26,10 +26,9 @@
 }
 
 - (IBAction)backkButtonPressed:(id)sender {
-    [self dismissLHViewControllerWithColor:nil animated:YES completion:^{
+    [self dismissLHViewControllerWithTapView:sender color:nil animated:YES completion:^{
         
     }];
 }
-
 
 @end

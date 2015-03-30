@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VwX-va-eMs">
-                    <rect key="frame" x="101" y="269" width="173" height="129"/>
+                    <rect key="frame" x="118" y="47" width="138" height="82"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                     <state key="normal" title="Click">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
