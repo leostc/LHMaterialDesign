@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDB564F91AC57095007910BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB564F81AC57095007910BA /* main.m */; };
+		CDB564FC1AC57095007910BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB564FB1AC57095007910BA /* AppDelegate.m */; };
+		CDB564FF1AC57095007910BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB564FE1AC57095007910BA /* ViewController.m */; };
+		CDB565041AC57095007910BA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB565031AC57095007910BA /* Images.xcassets */; };
+		CDB565071AC57095007910BA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB565051AC57095007910BA /* LaunchScreen.xib */; };
+		CDB565131AC57095007910BA /* LHMaterialDesignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB565121AC57095007910BA /* LHMaterialDesignTests.m */; };
+		CDB5651D1AC570AF007910BA /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB5651C1AC570AF007910BA /* ViewController.xib */; };
+		CDB565211AC57158007910BA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB5651F1AC57158007910BA /* DetailViewController.m */; };
+		CDB565221AC57158007910BA /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDB565201AC57158007910BA /* DetailViewController.xib */; };
+		CDB565261AC57220007910BA /* UIViewController+MaterialDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB565251AC57220007910BA /* UIViewController+MaterialDesign.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDB5650D1AC57095007910BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDB564EB1AC57095007910BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDB564F21AC57095007910BA;
+			remoteInfo = LHMaterialDesign;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CDB564F31AC57095007910BA /* LHMaterialDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LHMaterialDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDB564F71AC57095007910BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDB564F81AC57095007910BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CDB564FA1AC57095007910BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CDB564FB1AC57095007910BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CDB564FD1AC57095007910BA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CDB564FE1AC57095007910BA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CDB565031AC57095007910BA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CDB565061AC57095007910BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CDB5650C1AC57095007910BA /* LHMaterialDesignTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LHMaterialDesignTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDB565111AC57095007910BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDB565121AC57095007910BA /* LHMaterialDesignTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LHMaterialDesignTests.m; sourceTree = "<group>"; };
+		CDB5651C1AC570AF007910BA /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		CDB5651E1AC57158007910BA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CDB5651F1AC57158007910BA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CDB565201AC57158007910BA /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		CDB565241AC57220007910BA /* UIViewController+MaterialDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MaterialDesign.h"; path = "MaterialDesign/UIViewController+MaterialDesign.h"; sourceTree = "<group>"; };
+		CDB565251AC57220007910BA /* UIViewController+MaterialDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MaterialDesign.m"; path = "MaterialDesign/UIViewController+MaterialDesign.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDB564F01AC57095007910BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDB565091AC57095007910BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDB564EA1AC57095007910BA = {
+			isa = PBXGroup;
+			children = (
+				CDB564F51AC57095007910BA /* LHMaterialDesign */,
+				CDB5650F1AC57095007910BA /* LHMaterialDesignTests */,
+				CDB564F41AC57095007910BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDB564F41AC57095007910BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDB564F31AC57095007910BA /* LHMaterialDesign.app */,
+				CDB5650C1AC57095007910BA /* LHMaterialDesignTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDB564F51AC57095007910BA /* LHMaterialDesign */ = {
+			isa = PBXGroup;
+			children = (
+				CDB565231AC571CF007910BA /* MaterialDesign */,
+				CDB564FA1AC57095007910BA /* AppDelegate.h */,
+				CDB564FB1AC57095007910BA /* AppDelegate.m */,
+				CDB564FD1AC57095007910BA /* ViewController.h */,
+				CDB564FE1AC57095007910BA /* ViewController.m */,
+				CDB5651C1AC570AF007910BA /* ViewController.xib */,
+				CDB5651E1AC57158007910BA /* DetailViewController.h */,
+				CDB5651F1AC57158007910BA /* DetailViewController.m */,
+				CDB565201AC57158007910BA /* DetailViewController.xib */,
+				CDB565031AC57095007910BA /* Images.xcassets */,
+				CDB565051AC57095007910BA /* LaunchScreen.xib */,
+				CDB564F61AC57095007910BA /* Supporting Files */,
+			);
+			path = LHMaterialDesign;
+			sourceTree = "<group>";
+		};
+		CDB564F61AC57095007910BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDB564F71AC57095007910BA /* Info.plist */,
+				CDB564F81AC57095007910BA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDB5650F1AC57095007910BA /* LHMaterialDesignTests */ = {
+			isa = PBXGroup;
+			children = (
+				CDB565121AC57095007910BA /* LHMaterialDesignTests.m */,
+				CDB565101AC57095007910BA /* Supporting Files */,
+			);
+			path = LHMaterialDesignTests;
+			sourceTree = "<group>";
+		};
+		CDB565101AC57095007910BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDB565111AC57095007910BA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDB565231AC571CF007910BA /* MaterialDesign */ = {
+			isa = PBXGroup;
+			children = (
+				CDB565241AC57220007910BA /* UIViewController+MaterialDesign.h */,
+				CDB565251AC57220007910BA /* UIViewController+MaterialDesign.m */,
+			);
+			name = MaterialDesign;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDB564F21AC57095007910BA /* LHMaterialDesign */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDB565161AC57095007910BA /* Build configuration list for PBXNativeTarget "LHMaterialDesign" */;
+			buildPhases = (
+				CDB564EF1AC57095007910BA /* Sources */,
+				CDB564F01AC57095007910BA /* Frameworks */,
+				CDB564F11AC57095007910BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LHMaterialDesign;
+			productName = LHMaterialDesign;
+			productReference = CDB564F31AC57095007910BA /* LHMaterialDesign.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CDB5650B1AC57095007910BA /* LHMaterialDesignTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDB565191AC57095007910BA /* Build configuration list for PBXNativeTarget "LHMaterialDesignTests" */;
+			buildPhases = (
+				CDB565081AC57095007910BA /* Sources */,
+				CDB565091AC57095007910BA /* Frameworks */,
+				CDB5650A1AC57095007910BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDB5650E1AC57095007910BA /* PBXTargetDependency */,
+			);
+			name = LHMaterialDesignTests;
+			productName = LHMaterialDesignTests;
+			productReference = CDB5650C1AC57095007910BA /* LHMaterialDesignTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDB564EB1AC57095007910BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = lihao;
+				TargetAttributes = {
+					CDB564F21AC57095007910BA = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					CDB5650B1AC57095007910BA = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = CDB564F21AC57095007910BA;
+					};
+				};
+			};
+			buildConfigurationList = CDB564EE1AC57095007910BA /* Build configuration list for PBXProject "LHMaterialDesign" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDB564EA1AC57095007910BA;
+			productRefGroup = CDB564F41AC57095007910BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDB564F21AC57095007910BA /* LHMaterialDesign */,
+				CDB5650B1AC57095007910BA /* LHMaterialDesignTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDB564F11AC57095007910BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB565071AC57095007910BA /* LaunchScreen.xib in Resources */,
+				CDB5651D1AC570AF007910BA /* ViewController.xib in Resources */,
+				CDB565041AC57095007910BA /* Images.xcassets in Resources */,
+				CDB565221AC57158007910BA /* DetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDB5650A1AC57095007910BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDB564EF1AC57095007910BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB565261AC57220007910BA /* UIViewController+MaterialDesign.m in Sources */,
+				CDB564FF1AC57095007910BA /* ViewController.m in Sources */,
+				CDB564FC1AC57095007910BA /* AppDelegate.m in Sources */,
+				CDB564F91AC57095007910BA /* main.m in Sources */,
+				CDB565211AC57158007910BA /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDB565081AC57095007910BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB565131AC57095007910BA /* LHMaterialDesignTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDB5650E1AC57095007910BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDB564F21AC57095007910BA /* LHMaterialDesign */;
+			targetProxy = CDB5650D1AC57095007910BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CDB565051AC57095007910BA /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDB565061AC57095007910BA /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CDB565141AC57095007910BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CDB565151AC57095007910BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CDB565171AC57095007910BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = LHMaterialDesign/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDB565181AC57095007910BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = LHMaterialDesign/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CDB5651A1AC57095007910BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LHMaterialDesignTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LHMaterialDesign.app/LHMaterialDesign";
+			};
+			name = Debug;
+		};
+		CDB5651B1AC57095007910BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LHMaterialDesignTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LHMaterialDesign.app/LHMaterialDesign";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDB564EE1AC57095007910BA /* Build configuration list for PBXProject "LHMaterialDesign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDB565141AC57095007910BA /* Debug */,
+				CDB565151AC57095007910BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDB565161AC57095007910BA /* Build configuration list for PBXNativeTarget "LHMaterialDesign" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDB565171AC57095007910BA /* Debug */,
+				CDB565181AC57095007910BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CDB565191AC57095007910BA /* Build configuration list for PBXNativeTarget "LHMaterialDesignTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDB5651A1AC57095007910BA /* Debug */,
+				CDB5651B1AC57095007910BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDB564EB1AC57095007910BA /* Project object */;
+}
