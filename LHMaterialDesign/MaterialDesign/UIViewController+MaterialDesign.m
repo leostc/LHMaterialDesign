@@ -18,7 +18,7 @@ static const char *pointVarKey = "animationPoint";
                           color:(UIColor*)color
                        animated:(BOOL)animated
                      completion:(void (^)(void))completion{
-    
+    self.view.userInteractionEnabled = NO;
     CGPoint convertedPoint = [self.view convertPoint:view.center fromView:view.superview];
     [viewController setAnimationPoint:[NSValue valueWithCGPoint:convertedPoint]];
     
@@ -27,6 +27,7 @@ static const char *pointVarKey = "animationPoint";
         animationColor = viewController.view.backgroundColor;
     }
     [self mdAnimateAtPoint:convertedPoint color:animationColor duration:0.5 inflating:YES presetingViewController:nil completion:^{
+        self.view.userInteractionEnabled = YES;
         [self presentViewController:viewController animated:NO completion:^{
             if (completion) {
                 completion();
@@ -45,8 +46,10 @@ static const char *pointVarKey = "animationPoint";
     }
     
     UIViewController *vc = self.presentingViewController;
+    vc.view.userInteractionEnabled = NO;
     [self dismissViewControllerAnimated:NO completion:^{
         [self mdAnimateAtPoint:animaionPoint color:animationColor duration:0.5 inflating:NO presetingViewController:vc completion:^{
+            vc.view.userInteractionEnabled = YES;
             if (completion) {
                 completion();
             }
