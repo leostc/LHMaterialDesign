@@ -432,6 +432,7 @@
 				CDB565181AC57095007910BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CDB565191AC57095007910BA /* Build configuration list for PBXNativeTarget "LHMaterialDesignTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +441,7 @@
 				CDB5651B1AC57095007910BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

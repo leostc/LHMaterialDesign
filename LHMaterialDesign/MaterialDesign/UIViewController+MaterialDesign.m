@@ -21,19 +21,32 @@ static const char *pointVarKey = "animationPoint";
     if (animated) {
         self.view.userInteractionEnabled = NO;
         CGPoint convertedPoint = [self.view convertPoint:view.center fromView:view.superview];
-        [viewController setAnimationPoint:[NSValue valueWithCGPoint:convertedPoint]];
+        
+        if ([viewController isKindOfClass:[UINavigationController class]]) {
+            [((UINavigationController*)viewController).topViewController setAnimationPoint:[NSValue valueWithCGPoint:convertedPoint]];
+        } else {
+            [viewController setAnimationPoint:[NSValue valueWithCGPoint:convertedPoint]];
+        }
         
         UIColor *animationColor = color;
         if (animationColor == nil) {
             animationColor = viewController.view.backgroundColor;
         }
-        [self mdAnimateAtPoint:convertedPoint color:animationColor duration:0.5 inflating:YES presetingViewController:nil completion:^{
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self presentViewController:viewController animated:NO completion:nil];
+        });
+        
+        CAShapeLayer *shapeLayer = [self mdShapeLayerForAnimationAtPoint:convertedPoint];
+        shapeLayer.fillColor = animationColor.CGColor;
+        self.view.layer.masksToBounds = YES;
+        [self.view.layer addSublayer:shapeLayer];
+        
+        [self mdAnimateAtPoint:convertedPoint duration:0.4 inflating:YES shapeLayer:shapeLayer completion:^{
             self.view.userInteractionEnabled = YES;
-            [self presentViewController:viewController animated:NO completion:^{
-                if (completion) {
-                    completion();
-                }
-            }];
+            if (completion) {
+                completion();
+            }
         }];
     } else {
         [self presentViewController:viewController animated:NO completion:^{
@@ -61,9 +74,18 @@ static const char *pointVarKey = "animationPoint";
         }
         
         UIViewController *vc = self.presentingViewController;
+        if ([vc isKindOfClass:[UINavigationController class]]) {
+            vc = ((UINavigationController*)vc).topViewController;
+        }
         vc.view.userInteractionEnabled = NO;
+        
+        CAShapeLayer *shapeLayer = [self mdShapeLayerForAnimationAtPoint:animaionPoint];
+        shapeLayer.fillColor = animationColor.CGColor;
+        vc.view.layer.masksToBounds = YES;
+        [vc.view.layer addSublayer:shapeLayer];
+        
         [self dismissViewControllerAnimated:NO completion:^{
-            [self mdAnimateAtPoint:animaionPoint color:animationColor duration:0.5 inflating:NO presetingViewController:vc completion:^{
+            [self mdAnimateAtPoint:animaionPoint duration:0.4 inflating:NO shapeLayer:shapeLayer completion:^{
                 vc.view.userInteractionEnabled = YES;
                 if (completion) {
                     completion();
@@ -79,19 +101,101 @@ static const char *pointVarKey = "animationPoint";
     }
 }
 
-#pragma mark - animation
-
-- (void)mdAnimateAtPoint:(CGPoint)point color:(UIColor *)color duration:(NSTimeInterval)duration inflating:(BOOL)inflating presetingViewController:(UIViewController *)viewContrller completion:(void (^)(void))block {
-    CAShapeLayer *shapeLayer = [self mdShapeLayerForAnimationAtPoint:point];
-    shapeLayer.fillColor = color.CGColor;
-    
-    if (!inflating && viewContrller) {
-        viewContrller.view.layer.masksToBounds = YES;
-        [viewContrller.view.layer addSublayer:shapeLayer];
-    } else {
+- (void)pushLHViewController:(UIViewController *)viewController
+                     tapView:(UIView *)view
+                       color:(UIColor*)color
+                    animated:(BOOL)animated
+                  completion:(void (^)(void))completion{
+    if (animated) {
+        self.view.userInteractionEnabled = NO;
+        CGPoint convertedPoint = [self.view convertPoint:view.center fromView:view.superview];
+        
+        if ([viewController isKindOfClass:[UINavigationController class]]) {
+            [((UINavigationController*)viewController).topViewController setAnimationPoint:[NSValue valueWithCGPoint:convertedPoint]];
+        } else {
+            [viewController setAnimationPoint:[NSValue valueWithCGPoint:convertedPoint]];
+        }
+        
+        UIColor *animationColor = color;
+        if (animationColor == nil) {
+            animationColor = viewController.view.backgroundColor;
+        }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController pushViewController:viewController animated:NO];
+        });
+        
+        CAShapeLayer *shapeLayer = [self mdShapeLayerForAnimationAtPoint:convertedPoint];
+        shapeLayer.fillColor = animationColor.CGColor;
         self.view.layer.masksToBounds = YES;
         [self.view.layer addSublayer:shapeLayer];
+        
+        [self mdAnimateAtPoint:convertedPoint duration:0.4 inflating:YES shapeLayer:shapeLayer completion:^{
+            self.view.userInteractionEnabled = YES;
+            if (completion) {
+                completion();
+            }
+        }];
+    } else {
+        [self.navigationController pushViewController:viewController animated:NO];
+        
+        if (completion) {
+            completion();
+        }
     }
+}
+
+- (void)popLHViewControllerWithTapView:(UIView *)view
+                                 color:(UIColor*)color
+                              animated:(BOOL)animated
+                            completion:(void (^)(void))completion{
+    if (animated) {
+        CGPoint animaionPoint = CGPointZero;
+        if (view) {
+            animaionPoint = [self.view convertPoint:view.center fromView:view.superview];
+        } else {
+            animaionPoint = [[self animationPoint] CGPointValue];
+        }
+        UIColor *animationColor = color;
+        if (animationColor == nil) {
+            animationColor = self.view.backgroundColor;
+        }
+        
+        if (self.navigationController.viewControllers.count < 2) {
+            [self.navigationController popViewControllerAnimated:NO];
+            return;
+        }
+        UIViewController *vc = self.navigationController.viewControllers[self.navigationController.viewControllers.count - 2];
+        vc.view.userInteractionEnabled = NO;
+        
+        CAShapeLayer *shapeLayer = [self mdShapeLayerForAnimationAtPoint:animaionPoint];
+        shapeLayer.fillColor = animationColor.CGColor;
+        vc.view.layer.masksToBounds = YES;
+        [vc.view.layer addSublayer:shapeLayer];
+        
+        [self.navigationController popViewControllerAnimated:NO];
+        [self mdAnimateAtPoint:animaionPoint duration:0.4 inflating:NO shapeLayer:shapeLayer completion:^{
+            vc.view.userInteractionEnabled = YES;
+            
+            if (completion) {
+                completion();
+            }
+        }];
+    } else {
+        [self.navigationController popViewControllerAnimated:NO];
+        if (completion) {
+            completion();
+        }
+    }
+}
+
+#pragma mark - animation
+
+- (void)mdAnimateAtPoint:(CGPoint)point
+                duration:(NSTimeInterval)duration
+               inflating:(BOOL)inflating
+              shapeLayer:(CAShapeLayer *)shapeLayer
+              completion:(void (^)(void))block {
     
     CGFloat scale = 1.0 / shapeLayer.frame.size.width;
     NSString *timingFunctionName = kCAMediaTimingFunctionDefault;
@@ -113,7 +217,7 @@ static const char *pointVarKey = "animationPoint";
 #pragma mark - helpers
 
 - (CGFloat)mdShapeDiameterForPoint:(CGPoint)point {
-    CGPoint cornerPoints[] = { {0.0, 0.0}, {0.0, self.view.bounds.size.height}, {self.view.bounds.size.width, self.view.bounds.size.height}, {self.view.bounds.size.width, 0.0} };
+    CGPoint cornerPoints[] = { {0.0, 0.0}, {0.0, LHMDScreenHeight}, {LHMDScreenWidth, LHMDScreenHeight}, {LHMDScreenWidth, 0.0} };
     CGFloat radius = 0.0;
     for (int i = 0; i < sizeof(cornerPoints) / sizeof(CGPoint); i++) {
         CGPoint p = cornerPoints[i];
