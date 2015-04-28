@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "1.0.0"
   s.summary      = "UIViewController's Transition with Material Design"
   s.description  = <<-DESC
-                    实现UIViewController切换时Material Design的效果
+                    UIViewController's Transition with Material Design  实现UIViewController切换时Material Design的效果
                    DESC
   s.homepage     = "https://github.com/leostc/LHMaterialDesign"
   
