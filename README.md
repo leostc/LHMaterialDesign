@@ -1,5 +1,6 @@
 LHMaterialDesign
 =============
+[![Build Status](https://travis-ci.org/leostc/LHMaterialDesign.svg?branch=master)](https://travis-ci.org/leostc/LHMaterialDesign)
 
 ![gif](https://github.com/leostc/LHMaterialDesign/blob/master/demo.gif)
 
