@@ -7,7 +7,7 @@ LHMaterialDesign
 UIViewController's Transition with Material Design
 主要为UIViewController添加了4个切换的接口，实现了Material Design的效果
   
-More infomation in [My Blog(我的博客)](http://idatadev.com/2015/04/06/shi-xian-lei-google-appde-material-designqie-huan-uiviewcontroller/)
+More information in [My Blog(我的博客)](http://idatadev.com/2015/04/06/shi-xian-lei-google-appde-material-designqie-huan-uiviewcontroller/)
 
 # Installation with CocoaPods
 
